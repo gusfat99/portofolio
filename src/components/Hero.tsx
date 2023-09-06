@@ -67,7 +67,7 @@ const Hero = () => {
 						</button>
 					</div>
 				</div>
-				<div className="w-1/3 h-330 overflow-hidden">
+				<div className="w-1/3 h-330 overflow-hidden hidden md:block">
 					<img src={MySelf} alt="my-self" className="w-full h-auto" />
 				</div>
 			</div>

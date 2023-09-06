@@ -1,10 +1,25 @@
 import { ProjectCard } from "."
 import { projects } from "../constants"
 import { styles } from "../styles"
+import { useState } from "react"
 
-const Projects = () => {
+interface ProjectsProps {
+	refs: any
+}
+
+const Projects: React.FC<ProjectsProps> = ({ refs }) => {
+	const [shownReadMoreIndex, setShownReadMoreIndex] = useState<null | number>(
+		null
+	)
+	const handleReadMore = (index: number) => {
+		setShownReadMoreIndex(index)
+	}
+
 	return (
-		<div className={`mt-40  max-w-7xl mx-auto ${styles.paddingX}`}>
+		<div
+			ref={refs}
+			className={`mt-40  max-w-7xl mx-auto ${styles.paddingX}`}
+		>
 			<span className="hash-span" id={"work"}>
 				&nbsp;
 			</span>
@@ -24,7 +39,12 @@ const Projects = () => {
 
 			<div className="mt-20 flex flex-wrap gap-7">
 				{projects.map((project, index) => (
-					<ProjectCard key={`project-${index}`} item={project} />
+					<ProjectCard
+						key={index}
+						onReadMore={() => handleReadMore(index)}
+						shownDescFull={shownReadMoreIndex === index}
+						item={project}
+					/>
 				))}
 			</div>
 		</div>

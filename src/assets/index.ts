@@ -9,6 +9,7 @@ import LmsProject from "./lmsproject.png";
 import SppirtProject from "./sppitproject.png";
 import PamjayaProject from "./pamjayaproject.png";
 import FlutixProject from "./flutixproject.jpeg";
+import EcotourismProject from "./ecotourismproject.jpeg";
 import Github from "./github.png";
 import Graduation from "./graduation.png";
 import Laptop from "./laptop.png";
@@ -32,6 +33,8 @@ import IG from "./ig.png";
 import FB from "./fb.png";
 import Linkin from "./linkin.png";
 import Github2 from "./github-2.png";
+import Close from "./close.png";
+import Menu from "./menu.png";
 
 export {
    Mobile,
@@ -45,6 +48,7 @@ export {
    SppirtProject,
    PamjayaProject,
    FlutixProject,
+   EcotourismProject,
    Github,
    Graduation,
    Laptop,
@@ -67,5 +71,7 @@ export {
    IG,
    FB,
    Linkin,
-   Github2
+   Github2,
+   Menu,
+   Close
 }

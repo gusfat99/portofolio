@@ -22,6 +22,7 @@ import {
 	PHP,
 	Jquery,
 	MySql,
+	EcotourismProject,
 } from "../assets"
 
 export const navLinks = [
@@ -66,10 +67,10 @@ export const experiences: ExperienceType[] = [
 		title: "Fullstack Developer",
 		company: "AMA SALAM INDONESIA",
 		descs: [
-			"Developing and maintaining web applications using React.js and other related technologies.",
-			"Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-			"Implementing responsive design and ensuring cross-browser compatibility.",
-			"Participating in code reviews and providing constructive feedback to other developers.",
+			"Reviewed code, debugged problems, and corrected issues",
+			"Discussed project progress with customers, collected feedback on different stages and directly addressed concerns.",
+			"Used Node.js, ORM and SQL to develop and manage databases (Postgree SQL).",
+			"Responsible for a frontend and backend, using React framework, Express. js, as well as development support for MVC applications using Codeigniter.",
 		],
 		date: "Sept 2021 - March 2023",
 	},
@@ -77,10 +78,15 @@ export const experiences: ExperienceType[] = [
 		title: "Freelancer",
 		company: "",
 		descs: [
-			"Developing and maintaining web applications using React.js and other related technologies.",
-			"Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-			"Implementing responsive design and ensuring cross-browser compatibility.",
-			"Participating in code reviews and providing constructive feedback to other developers.",
+			"Negotiated fees and contracts to reach mutually beneficial agreements with clients.",
+			"Collaborated with clients to define project requirements and deliverables.",
+			"Project Details :",
+			"System SPP‑IRT BPOM (2019 ‑ 2020), Web Base Using Codeiniter.",
+			"System GKPD from BPOM (2020), Web Base Using Codeigniter and Javacript.",
+			"e‑Perda Kemendagri (2020 ‑ 2021), Web Base Using Codeigniter, Nodejs and JQuery.",
+			"Learning Management System (Courses 2021 ‑ 2022) from the Dutch agency, Web Base as Fullstack (React and Express.js).",
+			"BIMA - Basis Informasi Penelitian dan Pengabdian kepada Masyarakat from Kemdikbud (2022 ‑ now) as Frontend Developer (ReactJs)",
+			"Eoffice PAM JAYA ( Create mail disposition office system 2023) as frontend using Nextjs",
 		],
 		date: "Jan 2019 - Current",
 	},
@@ -92,7 +98,8 @@ export type ProjectType = {
 	tags: Array<string>
 	image: any
 	link: string
-	type: "site" | "github"
+	type: "site" | "github";
+	fit : 'contain' | 'cover'
 }
 
 export const projects: ProjectType[] = [
@@ -103,6 +110,7 @@ export const projects: ProjectType[] = [
 		image: EperdaProject,
 		link: "http://eperda.kemendagri.go.id/",
 		type: "site",
+		fit : "cover"
 	},
 	{
 		title: "LMS Flevo Academie",
@@ -111,6 +119,7 @@ export const projects: ProjectType[] = [
 		image: LmsProject,
 		link: "https://flevoacademie.nl",
 		type: "site",
+		fit : "cover"
 	},
 	{
 		title: "Sistem GKPD BPOM (2019)",
@@ -119,6 +128,7 @@ export const projects: ProjectType[] = [
 		image: GkpdProject,
 		link: "https://gkpd.pom.go.id/index.php",
 		type: "site",
+		fit : "cover"
 	},
 	{
 		title: "Sistem SPPIRT BPOM (2019)",
@@ -127,6 +137,7 @@ export const projects: ProjectType[] = [
 		image: SppirtProject,
 		link: "https://sppirt.pom.go.id/Home",
 		type: "site",
+		fit : "cover"
 	},
 	{
 		title: "BIMA",
@@ -135,14 +146,16 @@ export const projects: ProjectType[] = [
 		image: BimaProject,
 		link: "https://bima.kemdikbud.go.id",
 		type: "site",
+		fit : "cover"
 	},
 	{
-		title: "e-Cotoursim",
+		title: "eCotoursim",
 		desc: "Membangun aplikasi android dengan React Native. e-Cotoursim merupakan sebuah inovasi karya kami untuk membantu pengelolaan konten dan memebrikan informasi seperti kuliner, wisata di Bogor Raya untuk para wisatawan yang saat ini masih tahap pengembangan.",
 		tags: ["#react", "#reactNative", "#android"],
-		image: FlutixProject,
+		image: EcotourismProject,
 		link: "https://github.com/gusfat99/flutixid",
 		type: "github",
+		fit : "contain"
 	},
 	{
 		title: "Eoffice PAMJAYA",
@@ -151,6 +164,7 @@ export const projects: ProjectType[] = [
 		image: PamjayaProject,
 		link: "https://eoffice.pamjaya.co.id/",
 		type: "site",
+		fit : "cover"
 	},
 	{
 		title: "Flutix ID",
@@ -159,6 +173,7 @@ export const projects: ProjectType[] = [
 		image: FlutixProject,
 		link: "https://github.com/gusfat99/flutixid",
 		type: "github",
+		fit : "contain",
 	},
 ]
 
@@ -193,11 +208,11 @@ export const educations: EducationType[] = [
 ]
 
 export type TechnologyType = {
-	name: string;
-	icon : any
-};
+	name: string
+	icon: any
+}
 
-export const technologies : TechnologyType[] = [
+export const technologies: TechnologyType[] = [
 	{
 		name: "HTML 5",
 		icon: Html,
@@ -220,7 +235,7 @@ export const technologies : TechnologyType[] = [
 	},
 	{
 		name: "Flutter",
-		icon : Flutter,
+		icon: Flutter,
 	},
 	{
 		name: "Redux Toolkit",
@@ -232,11 +247,11 @@ export const technologies : TechnologyType[] = [
 	},
 	{
 		name: "PHP",
-		icon : PHP,
+		icon: PHP,
 	},
 	{
 		name: "Jquery",
-		icon : Jquery,
+		icon: Jquery,
 	},
 	{
 		name: "Node.js",
@@ -250,5 +265,4 @@ export const technologies : TechnologyType[] = [
 		name: "git",
 		icon: Git,
 	},
-	
 ]

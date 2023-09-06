@@ -6,12 +6,12 @@ import { styles } from "../styles"
 
 const Educations = () => {
 	return (
-		<div className="mt-40">
+		<div className="mt-40 mb-20">
 			<span className="hash-span" id={"educations"}>
 				&nbsp;
 			</span>
 			<p className={`${styles.sectionSubText} text-center`}>
-				What I have done so far
+				My Educations
 			</p>
 			<h2 className={`${styles.sectionHeadText} text-center`}>
 				Educations

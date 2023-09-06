@@ -2,26 +2,23 @@ import { Link } from "react-router-dom"
 import { styles } from "../styles"
 import { useState, useEffect } from "react"
 import { navLinks } from "../constants"
+import { Close, Menu } from "../assets"
 
-const NavbarApp = () => {
-	const [active, setActive] = useState("")
-	const [toggle, setToggle] = useState(false)
-	const [scrolled, setScrolled] = useState(false)
+interface NavbarAppPropos {
+	setActive: (arg1: string) => void;
+	setToggle: (arg1: boolean) => void;
+	active: string
+	scrolled: boolean
+	toggle: boolean
+}
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const scrollTop = window.scrollY
-			if (scrollTop > 100) {
-				setScrolled(true)
-			} else {
-				setScrolled(false)
-			}
-		}
-
-		window.addEventListener("scroll", handleScroll)
-
-		return () => window.removeEventListener("scroll", handleScroll)
-	}, [])
+const NavbarApp: React.FC<NavbarAppPropos> = ({
+	setActive,
+	setToggle,
+	active,
+	scrolled,
+	toggle,
+}) => {
 	// console.log("scrolled", scrolled)
 	return (
 		<nav
@@ -59,6 +56,39 @@ const NavbarApp = () => {
 						</li>
 					))}
 				</ul>
+				<div className="sm:hidden flex flex-1 justify-end items-center">
+					<img
+						src={toggle ? Close : Menu}
+						alt="menu"
+						className="w-[28px] h-[28px] object-contain"
+						onClick={() => setToggle(!toggle)}
+					/>
+
+					<div
+						className={`${
+							!toggle ? "hidden" : "flex"
+						} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+					>
+						<ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+							{navLinks.map((nav) => (
+								<li
+									key={nav.id}
+									className={`font-poppins font-medium cursor-pointer text-[16px] ${
+										active === nav.title
+											? "text-primary"
+											: "text-tertiary"
+									}`}
+									onClick={() => {
+										setToggle(!toggle)
+										setActive(nav.title)
+									}}
+								>
+									<a href={`#${nav.id}`}>{nav.title}</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				</div>
 			</div>
 		</nav>
 	)
