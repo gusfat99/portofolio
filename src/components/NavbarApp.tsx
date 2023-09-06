@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
-import { styles } from "../styles"
-import { useState, useEffect } from "react"
-import { navLinks } from "../constants"
 import { Close, Menu } from "../assets"
+import { navLinks } from "../constants"
+import { styles } from "../styles"
 
 interface NavbarAppPropos {
 	setActive: (arg1: string) => void;

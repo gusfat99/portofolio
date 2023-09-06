@@ -15,7 +15,7 @@ const Contact: React.FC<ContactProps> = ({ refs }) => {
 		message: "",
 	})
 
-	const [loading, setLoading] = useState<Boolean>(false)
+	const [loading, setLoading] = useState<boolean>(false)
 
 	const handleChange = (e: any) => {
 		const { target } = e
@@ -45,7 +45,7 @@ const Contact: React.FC<ContactProps> = ({ refs }) => {
 				import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
 			)
 			.then(
-				(res: EmailJSResponseStatus) => {
+				(_res: EmailJSResponseStatus) => {
 					setLoading(false)
 					alert(
 						"Thank you. I will get back to you as soon as possible."
@@ -68,9 +68,11 @@ const Contact: React.FC<ContactProps> = ({ refs }) => {
 
 	return (
 		<div className={` bg-tertiary`}>
-			<div className={`max-w-7xl mx-auto ${styles.paddingX} ${styles.paddingY}`} >
-				<span className="p-0" ref={refs} id={"contact"}/>
-				
+			<div
+				className={`max-w-7xl mx-auto ${styles.paddingX} ${styles.paddingY}`}
+			>
+				<span className="p-0" ref={refs} id={"contact"} />
+
 				<div className="grid gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
 					<div className="bg-secondary p-8 rounded-2xl">
 						<h1 className={`${styles.heroHeadText} text-primary`}>
@@ -122,10 +124,11 @@ const Contact: React.FC<ContactProps> = ({ refs }) => {
 							</label>
 
 							<button
+								disabled={loading ?? false}
 								type="submit"
 								className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-primary font-bold"
 							>
-								Send
+								{loading ? "Sending..." : "Send"}
 							</button>
 						</form>
 					</div>

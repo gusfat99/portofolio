@@ -31,8 +31,7 @@ function App() {
 				setScrolled(false)
 			}
 
-			console.log("contactRef", contactRef?.current?.offsetTop)
-			console.log("scrollTop", scrollTop+90)
+			
 			if (
 				scrollTop >= aboutRef?.current?.offsetTop - bias &&
 				scrollTop < workRef?.current.offsetTop - bias

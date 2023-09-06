@@ -1,7 +1,7 @@
 import { styles } from "../styles"
 import MySelf from "../assets/myself.png"
 import { ButtonSocmed } from "."
-import { FB, Github, Github2, IG, Linkin } from "../assets"
+import { FB, Github2, IG, Linkin } from "../assets"
 
 const Hero = () => {
 	return (
